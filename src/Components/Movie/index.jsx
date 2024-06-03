@@ -48,7 +48,7 @@ const Movie = (props) => {
 
   const createPlaylist = async (playlistName) => {
     try {
-      await axios.post('http://localhost:8080/api/playlist',{ name: playlistName, movies: [], uid: localStorage.getItem("uid") });
+      await axios.post('https://fasalprojectbackendrepo-production.up.railway.app/api/playlist',{ name: playlistName, movies: [], uid: localStorage.getItem("uid") });
       fetchPlaylists();
     } catch (error) {
       console.error('Error creating playlist:', error);
