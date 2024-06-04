@@ -68,8 +68,6 @@ const Movie = (props) => {
   const handleCreatePlaylist = () => {
     createPlaylist(newPlaylist);
     setNewPlaylist("");
-    handleClosePlaylistModal();
-    navigate('/dashboard');
   };
   const handleSubmit = () => {
     const movie = {
