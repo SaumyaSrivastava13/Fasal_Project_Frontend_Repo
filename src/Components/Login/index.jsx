@@ -16,7 +16,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "https://fasalprojectbackendrepo-production.up.railway.app/api/auth";
+			const url = "https://fasal-project-backend-repo.onrender.com/api/auth";
 			const res = await axios.post(url, data);
 			localStorage.setItem("token", res.data.data);
 			localStorage.setItem("uid", res.data.uid);
