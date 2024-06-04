@@ -18,8 +18,8 @@ const Login = () => {
 		try {
 			const url = "https://fasal-project-backend-repo.onrender.com/api/auth";
 			const res = await axios.post(url, data);
-			localStorage.setItem("token", res.data.data);
-			localStorage.setItem("uid", res.data.uid);
+			await localStorage.setItem("token", res.data.data);
+			await localStorage.setItem("uid", res.data.uid);
 			navigate('/dashboard');
 		} catch (error) {
 			if (
