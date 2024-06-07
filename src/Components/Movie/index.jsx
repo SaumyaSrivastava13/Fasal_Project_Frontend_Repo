@@ -50,7 +50,7 @@ const Movie = (props) => {
 
   const createPlaylist = async (playlistName, isPublic) => {
     try {
-      await axios.post('https://fasalprojectbackendrepo-production.up.railway.app/api/playlist', {
+      await axios.post('https://fasal-project-backend-repo.onrender.com/api/playlist', {
         name: playlistName,
         movies: [],
         uid: localStorage.getItem("uid"),
