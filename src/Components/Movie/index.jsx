@@ -29,7 +29,7 @@ const Movie = (props) => {
 
   const fetchPlaylists = async () => {
     try {
-      const response = await axios.get(`https://fasalprojectbackendrepo-production.up.railway.app/api/playlist?uid=${localStorage.getItem("uid")}`);
+      const response = await axios.get(`https://fasal-project-backend-repo.onrender.com/api/playlist?uid=${localStorage.getItem("uid")}`);
       setPlaylists(response.data.playlists);
     } catch (error) {
       console.error('Error fetching playlists:', error);
@@ -38,7 +38,7 @@ const Movie = (props) => {
 
   const addMovieToPlaylist = async (playlistName, movie) => {
     try {
-      await axios.post('https://fasalprojectbackendrepo-production.up.railway.app/api/movie', {
+      await axios.post('https://fasal-project-backend-repo.onrender.com/api/movie', {
         playlistName,
         imdbID: selectedMovie,
         uid: localStorage.getItem("uid")
@@ -75,9 +75,6 @@ const Movie = (props) => {
   const handleCreatePlaylist = () => {
     createPlaylist(newPlaylist, privacy === "public");
     setNewPlaylist("");
-    setPrivacy("private");
-    handleClosePlaylistModal();
-    navigate('/dashboard');
   };
   const handleSubmit = () => {
     const movie = {

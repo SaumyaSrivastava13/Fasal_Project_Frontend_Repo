@@ -27,7 +27,7 @@ const Home = () => {
 
   const fetchPlaylists = async () => {
     try {
-      const response = await axios.get(`https://fasalprojectbackendrepo-production.up.railway.app/api/playlist?uid=${localStorage.getItem("uid")}`);
+      const response = await axios.get(`https://fasal-project-backend-repo.onrender.com/api/playlist?uid=${localStorage.getItem("uid")}`);
       setPlaylists(response.data.playlists);
       let img = await fetchRandomImage();
       setImages(img);
@@ -40,7 +40,7 @@ const Home = () => {
 
   const fetchMoviesForPlaylist = async (puid) => {
     try {
-      const response = await axios.get(`https://fasalprojectbackendrepo-production.up.railway.app/api/movieplay/${puid}`);
+      const response = await axios.get(`https://fasal-project-backend-repo.onrender.com/api/movieplay/${puid}`);
       const imdbIDs = response.data.movies;
       if (imdbIDs && imdbIDs.length > 0) {
         const moviePromises = imdbIDs.map(imdb =>
